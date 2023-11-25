@@ -24,6 +24,6 @@ public class PlayerMovement : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal"), moveY = Input.GetAxisRaw("Vertical");
         movement = new Vector2(moveX, moveY);
-        rb.MovePosition(rb.position + moveSpeed * movement * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * movement);
     }
 }
