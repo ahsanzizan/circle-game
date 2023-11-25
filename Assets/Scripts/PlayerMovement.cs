@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         float moveX = Input.GetAxisRaw("Horizontal"), moveY = Input.GetAxisRaw("Vertical");
-        movement = new Vector2(moveX, moveY);
+        movement = new Vector2(moveX, moveY).normalized;
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * movement);
     }
 }
