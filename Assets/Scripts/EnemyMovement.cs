@@ -26,7 +26,7 @@ public class EnemyMovement : MonoBehaviour
         Vector2 currentPos = (Vector2)this.transform.position;
 
         // Subtract player position and current position to get a direction
-        moveDir = playerPos - currentPos;
+        moveDir = (playerPos - currentPos).normalized;
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * moveDir);
     }
 }
