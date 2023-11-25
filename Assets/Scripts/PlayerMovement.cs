@@ -24,4 +24,12 @@ public class PlayerMovement : MonoBehaviour
         movement = new Vector2(moveX, moveY).normalized;
         rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * movement);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
