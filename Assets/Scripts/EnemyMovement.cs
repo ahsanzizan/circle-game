@@ -9,9 +9,11 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Attributes")]
     public float moveSpeed;
+    public float deathDelay = 6.5f;
 
     void Start()
     {
+        Destroy(this.gameObject, deathDelay);
         if (rb == null)
         {
             rb = this.GetComponent<Rigidbody2D>();
