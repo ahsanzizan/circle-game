@@ -10,7 +10,6 @@ public class EnemyMovement : MonoBehaviour
     [Header("Attributes")]
     public float moveSpeed;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (rb == null)
@@ -19,7 +18,6 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;

@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Attributes")]
     public float moveSpeed = 10f;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (rb == null)
@@ -19,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         float moveX = Input.GetAxisRaw("Horizontal"), moveY = Input.GetAxisRaw("Vertical");
