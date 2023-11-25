@@ -20,11 +20,16 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        Vector2 currentPos = (Vector2)this.transform.position;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
+        if (player != null)
+        {
+            Vector2 playerPos = player.transform.position;
+            Vector2 currentPos = (Vector2)this.transform.position;
 
-        // Subtract player position and current position to get a direction
-        moveDir = (playerPos - currentPos).normalized;
-        rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * moveDir);
+            // Subtract player position and current position to get a direction
+            moveDir = (playerPos - currentPos).normalized;
+            rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * moveDir);
+        }
     }
 }
